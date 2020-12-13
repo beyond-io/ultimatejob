@@ -2,6 +2,7 @@
 import requests
 from bs4 import BeautifulSoup as bs
 
+
 class Manipulation:
     def extract_jobs_list(self):
         fb_url = "https://www.facebook.com"
@@ -13,7 +14,6 @@ class Manipulation:
         for link in jobs_links:
             print(fb_url+link)
             # Need to push to a db
-
 
     def extract_jobs_title(self):
         jobs_titles = []
@@ -39,8 +39,6 @@ class main():
     soup = bs(r.content)
     # print(soup.prettify())
 
-
     Manipulation.extract_jobs_list(soup)
-
 
     Manipulation.extract_jobs_title(soup)
