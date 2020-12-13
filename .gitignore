@@ -130,3 +130,9 @@ dmypy.json
 
 # Vagrant
 .vagrant/
+
+# vim.exe.stackdump
+vim.exe.stackdump
+
+# 0002_auto_20201220_1954.py
+ultimatejobweb/migrations/0002_auto_20201220_1954.py
