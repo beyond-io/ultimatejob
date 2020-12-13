@@ -13,7 +13,8 @@ class User_Search_History(models.Model):
     CompanyName = models.CharField(max_length=128)
     JobTitle = models.CharField(max_length=128)
     ApplyURL = models.URLField()
-    
+
+
 class Jobs(models.Model):
     id = models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
     user = models.OneToOneField(User, on_delete=models.CASCADE)
