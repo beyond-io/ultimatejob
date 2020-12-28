@@ -41,6 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ultimatejobweb.apps.UltimatejobwebConfig',
     'django_filters'
+    'django_crontab',
+]
+
+CRONJOBS = [
+    ('0,30 * * * *', 'ultimatejobweb.cron.scheduled_job')
 ]
 
 MIDDLEWARE = [
