@@ -44,7 +44,7 @@ def create_req():
     # Load our first page
     # Need to pull from db
     search_url = "https://www.facebook.com/careers/jobs/?q="
-    company = "Facebook"
+    # company = "Facebook"
     # prefrences = "DevOps"
     req = requests.get(search_url)
     return req
