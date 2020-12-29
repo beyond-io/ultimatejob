@@ -23,9 +23,10 @@ def extract_jobs_title(soup):
     list_jobs_titles = []
     jobs_list = soup.find("div", {"class": "container-fluid iCIMS_JobsTable"})
     jobs = jobs_list.find_all("a", {"class": "iCIMS_Anchor"})
-    jobs_titles = jobs
+    titles = [title['title'] for title in jobs]
+    jobs_titles = titles
     for title in jobs_titles:
-        list_jobs_titles.append(title.get_text())
+        list_jobs_titles.append(title)
         # Need to push to a db
     print("-------Titles--------")
     print(list_jobs_titles)
