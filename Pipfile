@@ -12,7 +12,7 @@ django = "*"
 flake8 = "*"
 beautifulsoup4 = "*"
 requests = "*"
-django-crontab = "*"
+django-cron = "*"
 
 [requires]
 python_version = "3.8"
