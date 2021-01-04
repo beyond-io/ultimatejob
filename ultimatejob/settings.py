@@ -38,13 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ultimatejobweb.apps.UltimatejobwebConfig',
-#    'django_cron',
 ]
-
-#CRON_CLASSES = [
-#    "ultimatejobweb.cron.MyCronJob",
-    # ...
-#]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
