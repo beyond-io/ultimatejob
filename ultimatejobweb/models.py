@@ -19,7 +19,7 @@ class Job(models.Model):
         title_list, url_list = zip(*combined_list)
 
         for job_title, description_url in combined_list:
-            company_job = company.objects.get(company_name=company_name_api)
-            job(company=company_job, job_title=job_title, description_url=description_url).save()
+            company_job = Company.objects.get(company_name=company_name_api)
+            Job(company=company_job, job_title=job_title, description_url=description_url).save()
 
 # Create your models here.
