@@ -34,10 +34,14 @@ def extract_jobs_title(soup):
 
 
 def create_soup(req):
-    print(req.status_code)
     soup = BeautifulSoup(req.content, 'html.parser')
     # print(soup.prettify())
     return soup
+
+
+def check_status_code(req):
+    print(req.status_code)
+    return(req.status_code)
 
 
 def create_req():
