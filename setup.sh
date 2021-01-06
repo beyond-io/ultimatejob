@@ -14,11 +14,10 @@ pipenv sync
 pipenv run python manage.py makemigrations ultimatejobweb
 pipenv run python manage.py migrate
 
-
-# run our app. Nohup and “&” are used to let the setup script finish
 sudo dnf install crontabs
 sudo systemctl start crond
 python manage.py crontab add
+# run our app. Nohup and “&” are used to let the setup script finish
 
 # while our app stays up. The app logs will be collected in nohup.out
 nohup pipenv run python manage.py runserver 0.0.0.0:8000 &
