@@ -39,11 +39,6 @@ def create_soup(req):
     return soup
 
 
-def check_status_code(req):
-    print(req.status_code)
-    return(req.status_code)
-
-
 def create_req():
     # Load our first page
     # Need to pull from db
