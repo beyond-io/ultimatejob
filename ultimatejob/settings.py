@@ -45,7 +45,7 @@ INSTALLED_APPS = [
 ]
 
 CRONJOBS = [
-    ('0,30 * * * *', 'ultimatejobweb.cron.scheduled_job')
+    ('0,2 * * * *', 'ultimatejobweb.cron.scheduled_job')
 ]
 
 MIDDLEWARE = [
