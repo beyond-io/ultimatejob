@@ -37,5 +37,5 @@ def test_api_titles():
                               'Hardware Systems Engineer, Compute',
                               'Product Designer - Portal',
                               'Research Scientist, Vision',
-                              'Business Marketing Manager, Ads Ecosystem and Signals']
+                              'Research Science Manager, Statistics & Privacy']
     assert API_FB.extract_jobs_title(soup) == expected_output_titles, "The tests for URLs were successful"
