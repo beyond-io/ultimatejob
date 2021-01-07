@@ -13,6 +13,7 @@ flake8 = "*"
 beautifulsoup4 = "*"
 requests = "*"
 django-cron = "*"
+django-filter = "*"
 
 [requires]
 python_version = "3.8"

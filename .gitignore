@@ -129,7 +129,9 @@ dmypy.json
 .pyre/
 
 # Vagrant
-.vagrant/
 
-# cron.out
+.vagrant/
 .cron.out
+
+# Idea
+.idea/
