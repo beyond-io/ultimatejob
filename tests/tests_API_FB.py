@@ -1,6 +1,4 @@
 # Import and load necessary lib
-# import sys
-# sys.path.append('vagrant\ultimatejob')
 import API_FB
 
 

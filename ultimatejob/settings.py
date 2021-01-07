@@ -58,6 +58,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CRONJOBS = [
+    ('*/1 * * * *', 'ultimatejobweb.cron.my_scheduled_job')
+]
+
 ROOT_URLCONF = 'ultimatejob.urls'
 
 TEMPLATES = [
