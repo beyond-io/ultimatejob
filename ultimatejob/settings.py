@@ -48,6 +48,11 @@ CRONJOBS = [
     ('0,30 * * * *', 'ultimatejobweb.cron.scheduled_job')
 ]
 
+#CRON_CLASSES = [
+#    "ultimatejobweb.cron.MyCronJob",
+    # ...
+#]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
