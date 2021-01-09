@@ -13,7 +13,8 @@ class Job(models.Model):
     job_title = models.CharField(max_length=128)
     description_url = models.URLField()
 
-    def push_data_api(company_name_api, title_list, url_list):
+    @classmethod
+    def push_data_api(cls, company_name_api, title_list, url_list):
         combined = zip(title_list, url_list)
         combined_list = list(combined)
         title_list, url_list = zip(*combined_list)
