@@ -8,6 +8,5 @@ def test_with_authenticated_client(client, django_user_model):
     client.force_login(user)
     respons = client.get('/personal_area', follow=True)
     assert respons.status_code == 200
-    c = Client()
-    respons2 = c.post('/sign_in/', {'username': 'john', 'password': 'smith'})
+    respons2 = client.post('/personal_area')
     assert respons2.content.find(b"run your job search now") == -1
