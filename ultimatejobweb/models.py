@@ -21,6 +21,6 @@ class Job(models.Model):
 
         for job_title, description_url in combined_list:
             company_job = Company.objects.get(company_name=company_name_api)
-            Job(company=company_job, job_title=job_title, description_url=description_url).save()
+            cls(company=company_job, job_title=job_title, description_url=description_url).save()
 
 # Create your models here.
