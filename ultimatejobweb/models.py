@@ -7,9 +7,6 @@ class Company(models.Model):
     company_logo = models.TextField()
     function_name = models.TextField()
 
-    def get(self):
-        return self.company_name
-
 
 class Job(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
@@ -25,5 +22,9 @@ class Job(models.Model):
         for job_title, description_url in combined_list:
             company_job = Company.objects.get(company_name=company_name_api)
             cls(company=company_job, job_title=job_title, description_url=description_url).save()
+
+    @classmethod
+    def get(cls):
+        return cls.company_name
 
 # Create your models here.
