@@ -4,15 +4,14 @@ import requests
 
 
 def extract_jobs_url(soup):
-    fb_url = "https://www.facebook.com"
     jobs_links = []
     list_jobs_links = []
-    jobs_list = soup.find("div", {"class": "_8tk7"})
-    jobs = jobs_list.find_all("a", {"class": "_8sef"})
+    jobs_list = soup.find("div", {"class": "container-fluid iCIMS_JobsTable"})
+    jobs = jobs_list.find_all("a", {"class": "iCIMS_Anchor"})
     links = [link['href'] for link in jobs]
     jobs_links = links
     for link in jobs_links:
-        list_jobs_links.append(fb_url+link)
+        list_jobs_links.append(link)
         # Need to push to a db
     print("-------URLs--------")
     print(list_jobs_links)
@@ -22,11 +21,12 @@ def extract_jobs_url(soup):
 def extract_jobs_title(soup):
     jobs_titles = []
     list_jobs_titles = []
-    jobs_list = soup.find("div", {"class": "_8tk7"})
-    jobs = jobs_list.find_all("div", {"class": "_8sel"})
-    jobs_titles = jobs
+    jobs_list = soup.find("div", {"class": "container-fluid iCIMS_JobsTable"})
+    jobs = jobs_list.find_all("a", {"class": "iCIMS_Anchor"})
+    titles = [title['title'] for title in jobs]
+    jobs_titles = titles
     for title in jobs_titles:
-        list_jobs_titles.append(title.get_text())
+        list_jobs_titles.append(title)
         # Need to push to a db
     print("-------Titles--------")
     print(list_jobs_titles)
@@ -42,6 +42,6 @@ def create_soup(req):
 def create_req():
     # Load our first page
     # Need to pull from db
-    search_url = "https://www.facebook.com/careers/jobs/?q="
+    search_url = "https://careers-redhat.icims.com/jobs/search?ss=1&in_iframe=1&searchLocation=13269--Raanana"
     req = requests.get(search_url)
     return req

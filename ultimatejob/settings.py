@@ -40,7 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ultimatejobweb.apps.UltimatejobwebConfig',
-    'django_filters'
+    'django_filters',
+    'django_crontab',
+]
+
+CRONJOBS = [
+    ('0,2 * * * *', 'ultimatejobweb.cron.scheduled_job')
 ]
 
 MIDDLEWARE = [
@@ -51,6 +56,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+CRONJOBS = [
+    ('*/1 * * * *', 'ultimatejobweb.cron.my_scheduled_job')
 ]
 
 ROOT_URLCONF = 'ultimatejob.urls'
